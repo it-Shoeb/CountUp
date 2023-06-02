@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        min-height: 100vh;
+        background-color: #123456;
+
+        font-weight: 600;
+        font-size: 50px;
+        color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="count">0</h1>
+      <h1>Counter</h1>
+    </main>
+
+    <script>
+      let count = document.getElementById("count");
+      function CountUp(start, end, duration) {
+        let i = start;
+
+        const interval = setInterval(() => {
+          count.innerText = i;
+          i++;
+
+
+          if (i > end) {
+            clearInterval(interval);
+          }
+        },  (end - start) / duration);
+        // here we calculate how time it take to compelete
+
+        // currently duration is not working
+      }
+
+
+      // 1 / 10
+      // 10 /1
+
+      // Math.abs(8000 - 9900)
+      // / 3000
+
+      
+      CountUp(8000, 9900, 3000);
+
+    </script>
+  </body>
+</html>
